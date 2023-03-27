@@ -1,0 +1,184 @@
+/* text settings*/
+.text-light {
+    font-style: normal;
+    font-weight: 300;
+}
+
+.text-regular {
+    font-style: normal;
+    font-weight: 400;
+}
+
+.text-bold {
+    font-style: normal;
+    font-weight: 700;
+}
+
+.text-xs {
+    font-size: 20px;
+}
+
+.text-sm {
+    font-size: 32px;
+}
+
+.text-base {
+    font-size: 38px;
+}
+
+.text-lg {
+    font-size: 48px;
+}
+
+.text-xl {
+    font-size: 116px
+}
+
+.text-centered {
+    text-align: center;
+}
+
+/* image settings */
+.image-sm {
+    width: 70px;
+    height: 70px;
+}
+
+.image-xl {
+    width: 481px;
+    height: 724px;
+}
+
+/* position settings */
+.centered-block {
+    margin: auto;
+}
+
+/* main settings */
+.page {
+    background: black;
+    color: white;
+    font-family: 'Azeret Mono', monospace;
+    position:absolute;
+}
+
+
+/* header settings */
+.header {
+    height: 75px;
+    display: flex;
+}
+
+.header__text {
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+
+/* interactive-block settings */
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 0.8;}
+}
+
+.interactive-block {
+    display: flex;
+    position: relative;
+    height: 775px;
+}
+
+.interactive-block__image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+}
+
+.interactive-block__text {
+    opacity: 0;
+    animation: ani 2s forwards;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 155px;
+    z-index: 2;
+}
+
+.image_bottom {
+    z-index: 1;
+}
+
+.image_top {
+    z-index: 3;
+    opacity: 0;
+    transition: 0.2s linear;
+}
+
+.image_top:hover {
+    opacity: 100;
+    transition: 0.2s linear;
+}
+
+/* info settings*/
+.info {
+    height: 775px;
+}
+
+.text-block {
+    margin: auto;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* education settings */
+.education {
+    height: 870px;
+}
+
+.heading-text {
+    margin: 142px auto 54px;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.elem-head {
+    margin-top: 33px;
+    margin-bottom: 32px;
+}
+
+.secondary-education {
+    width: 284px;
+    margin-right: 70px;
+}
+
+.high-education {
+    width: 284px;
+    margin-left: 70px;
+}
+
+/* skill settings */
+.skills {
+    height: 870px;
+}
+
+.text-skills {
+    margin: 40px;
+}
+
+/* footer */
+.footer {
+    height: 122px;
+}
+
+.footer-elem {
+    margin: 10px 30px 30px 10px;
+}
