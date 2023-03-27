@@ -15,7 +15,7 @@
 }
 
 .text-xs {
-    font-size: 20px;
+    font-size: calc(20px + 0.5vw);
 }
 
 .text-sm {
@@ -124,10 +124,10 @@
     height: 775px;
 }
 
-.text-block {
+.info__text{
     margin: auto;
     height: 100%;
-    width: 30%;
+    width: 40%;
     display: flex;
     align-items: center;
     align-content: center;
