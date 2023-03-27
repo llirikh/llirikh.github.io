@@ -124,10 +124,10 @@
     height: 775px;
 }
 
-.info__text{
+.text-block {
     margin: auto;
     height: 100%;
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: center;
     align-content: center;
