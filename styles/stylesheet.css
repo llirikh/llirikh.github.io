@@ -15,7 +15,7 @@
 }
 
 .text-xs {
-    font-size: calc(20px + 0.4vw);
+    font-size: 20px;
 }
 
 .text-sm {
@@ -41,12 +41,10 @@
 /* image settings */
 .image-sm {
     width: 70px;
-    height: 70px;
 }
 
 .image-xl {
     width: 481px;
-    height: 724px;
 }
 
 /* position settings */
@@ -56,15 +54,23 @@
 
 /* main settings */
 .page {
+    width: 100vw;
     background: black;
     color: white;
     font-family: 'Azeret Mono', monospace;
     position:absolute;
 }
 
+.content {
+    width: 100%;
+    max-width: 980px;
+    margin: auto;
+}
+
 
 /* header settings */
 .header {
+    width: 100%;
     height: 75px;
     display: flex;
 }
@@ -82,6 +88,7 @@
 }
 
 .interactive-block {
+    width: 100%;
     display: flex;
     position: relative;
     height: 775px;
@@ -121,6 +128,7 @@
 
 /* info settings*/
 .info {
+    width: 100%;
     height: 775px;
 }
 
@@ -137,6 +145,7 @@
 
 /* education settings */
 .education {
+    width: 100%;
     height: 870px;
 }
 
@@ -167,6 +176,7 @@
 
 /* skill settings */
 .skills {
+    width: 100%;
     height: 870px;
 }
 
@@ -181,4 +191,92 @@
 
 .footer-elem {
     margin: 10px 30px 30px 10px;
+}
+
+@media (max-width: 900px) {
+    .image-xl {
+        width: 360px;
+    }
+
+    .text-xs {
+        font-size: 15px;
+    }
+
+    .text-sm {
+        font-size: 24px;
+    }
+
+    .text-base {
+        font-size: 28px;
+    }
+
+    .text-lg {
+        font-size: 36px;
+    }
+
+    .text-xl {
+        font-size: 87px
+    }
+}
+
+@media (max-width: 665px) {
+    .image-xl {
+        width: 270px;
+    }
+
+    .text-xs {
+        font-size: 12px;
+    }
+
+    .text-sm {
+        font-size: 18px;
+    }
+
+    .text-base {
+        font-size: 21px;
+    }
+
+    .text-lg {
+        font-size: 27px;
+    }
+
+    .text-xl {
+        font-size: 65px
+    }
+}
+
+@media (max-width: 665px) {
+    .image-xl {
+        width: 270px;
+    }
+
+    .text-xs {
+        font-size: 12px;
+    }
+
+    .text-sm {
+        font-size: 18px;
+    }
+
+    .text-base {
+        font-size: 21px;
+    }
+
+    .text-lg {
+        font-size: 27px;
+    }
+
+    .text-xl {
+        font-size: 65px
+    }
+}
+
+@media (max-width: 500px) {
+    .image-xl {
+        width: 200px;
+    }
+
+    .text-xl {
+        font-size: 40px
+    }
 }
