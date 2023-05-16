@@ -1,0 +1,16 @@
+.information__education-information {
+    margin: 10px 0 ;
+    padding: 0;
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+
+    text-align: center;
+}
+@media (max-width: 619px) {
+    .information__education-information {
+        font-size: 15px;
+        line-height: 17px;
+    }
+}

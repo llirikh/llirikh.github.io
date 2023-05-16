@@ -1,0 +1,16 @@
+.information__skills-name {
+    margin: 20px;
+    padding: 0;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 23px;
+}
+@media (max-width: 619px) {
+    .information__skills-name {
+        margin: 20px;
+
+        font-size: 17px;
+        line-height: 17px;
+    }
+}

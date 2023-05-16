@@ -1,0 +1,17 @@
+.information__list {
+    padding: 0;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    text-align: center;
+}
+
+@media (max-width: 619px) {
+    .information__list {
+        display: contents;
+    }
+}

@@ -1,0 +1,18 @@
+﻿.profile {
+    margin-top: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+@media (max-width: 619px) {
+    .profile {
+        margin-top: 0;
+        padding: 42px 19px 0;
+
+        flex-direction: column;
+        gap: 26px;
+    }
+}

@@ -1,0 +1,9 @@
+﻿.main {
+    color: white;
+
+    transition: 1s;
+}
+
+.main_theme-light {
+    color: black;
+}

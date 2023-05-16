@@ -1,91 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Portfolio of Kirill Zhukov">
-    <meta name="keywords" content="portfolio, programming, developer">
-    <meta name="author" content="Kirill Zhukov">
+    <title>Portfolio</title>
 
-    <meta itemprop="name" content="Kirill Zhukov">
-    <meta itemprop="description" content="The website shows my resume">
-    <meta itemprop="image" content="/images/photo_bottom.webp">
-
-    <meta property="og:title" content="Kirill Zhukov">
-    <meta property="og:description" content="The website shows my resume">
-    <meta property="og:image" content="/images/photo_bottom.webp">
-
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="/styles/stylesheet.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <title>My portfolio</title>
+    <link rel="stylesheet" href="pages/index.css">
 </head>
-<body>
-<div class="page">
+<body class="page">
     <header class="header">
-        <p class="header__text text-regular text-xs">PORTFOLIO 2023</p>
+        <div class="header__button-container">
+            <button class="header__rain-button">Rain</button>
+            <button class="header__theme-button">Snow</button>
+        </div>
     </header>
-    <main class="content">
-        <section class="interactive-block">
-            <div class="trigger-block">
-                <img class="interactive-block__image image_top image-xl" src="/images/photo_top.webp" alt="profile photo">
-                <img class="interactive-block__image image_bottom image-xl" src="/images/photo_bottom.webp" alt="profile photo">
-                <h1 class="interactive-block__text text-xl text-bold text-centered">KIRILL<br>PROGRAMMER*</h1>
-            </div>
+
+    <main class="main">
+        <section class="profile">
+                <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
+
+                <div class="profile__info">
+                    <h1 class="profile__name">Kirill Zhukov</h1>
+                    <p class="profile__status">Student, programmer</p>
+                </div>
         </section>
-        <section class="info">
-            <div class="text-block">
-                <p class="info__text text-light text-xs text-centered">
-                    At auctor urna nunc id cursus metus aliquam eleifend mi
-                    in nulla posuere sollicitudin aliquam ultrices sagittis orci a
-                    scelerisque purus semper eget duis at tellus at urna condimentum mattis.
-                </p>
-            </div>
-        </section>
-        <section class="education">
-            <div class="heading-text">
-                <h2 class="text-regular text-lg text-centered">EDUCATION</h2>
-            </div>
-            <div class="flex-box">
-                <div class="secondary-education">
-                    <h3 class="elem-head text-light text-sm text-centered">SECONDARY</h3>
-                    <p class="text-light text-xs text-centered">Gymnasium of Urzhum<br><br>Computer science class<br><br>2020-2022</p>
-                </div>
-                <div class="high-education">
-                    <h3 class="elem-head text-light text-sm text-centered">HIGH</h3>
-                    <p class="text-light text-xs text-centered">MIPT<br><br>High school of software engineering<br><br>2022-2026</p>
-                </div>
-            </div>
-        </section>
-        <section class="skills">
-            <div class="heading-text">
-                <h2 class="text-regular text-lg text-centered">SKILLS</h2>
-            </div>
-            <div class="flex-box">
-                <div>
-                    <p class="text-skills text-light text-sm text-centered">ML engineer</p>
-                    <p class="text-skills text-light text-sm text-centered">Front-end<br>developer</p>
-                </div>
-                <div>
-                    <p class="text-skills text-light text-sm text-centered">C++ developer</p>
-                    <p class="text-skills text-light text-sm text-centered">Back-end<br>developer</p>
-                </div>
-            </div>
+
+        <section class="information">
+            <p class="information__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <h2 class="information__heading">Education</h2>
+            <ul class="information__list">
+                <li>
+                    <h3 class="information__education-type">Secondary</h3>
+                    <p class="information__education-information">
+                        Gymnasium of Urzhum<br>
+                        Computer science class
+                    </p>
+                    <p class="information__education-information">2020-2022</p>
+                </li>
+                <li>
+                    <h3 class="information__education-type">High</h3>
+                    <p class="information__education-information">
+                        MIPT<br>
+                        High school of<br>software engineering
+                    </p>
+                    <p class="information__education-information">2022-2026</p>
+                </li>
+            </ul>
+
+            <h2 class="information__heading">Skills</h2>
+            <ul class="information__list">
+                <li class="information__skills-name">ML engineer</li>
+                <li class="information__skills-name">Front-end developer</li>
+                <li class="information__skills-name">C++ developer</li>
+                <li class="information__skills-name">Back-end developer</li>
+            </ul>
         </section>
     </main>
+
     <footer class="footer">
-        <div class="flex-box">
-            <a href="https://vk.com/vigener"><img class="footer-elem image-sm" src="images/vk.webp" alt="vk icon"></a>
-            <a href="https://t.me/llirikh"><img class="footer-elem image-sm" src="images/telegram.webp" alt="telegram icon"></a>
-            <a href="https://instagram.com/richard__bruk"><img class="footer-elem image-sm" src="images/instagram.webp" alt="instagram icon"></a>
+        <p class="footer__copyright">Contact</p>
+        <div class="footer__button-container">
+            <button class="footer__button"></button>
+            <button class="footer__button"></button>
+            <button class="footer__button"></button>
         </div>
     </footer>
-</div>
+
+    <div class="canvas-background"></div>
+
+    <div class="popup popup_opened">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+
+            <h2 class="popup__title">Редактировать профиль</h2>
+
+            <form class="popup__form" name="profile-edit">
+                <fieldset class="popup__fieldset">
+                    <input class="popup__input" type="text" name="profile-name" placeholder="Имя">
+
+                    <input class="popup__input" type="text" name="profile-status" placeholder="О себе">
+                </fieldset>
+
+                <button class="popup__save-button" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="components/script.js"></script>
 </body>
 </html>

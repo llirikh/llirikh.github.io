@@ -1,0 +1,10 @@
+.information {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 619px) {
+    .information {
+        margin-top: 27px;
+    }
+}

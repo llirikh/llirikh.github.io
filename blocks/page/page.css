@@ -1,0 +1,53 @@
+﻿.page {
+    margin: 0 auto;
+
+    min-width: 880px;
+    max-width: 880px;
+    width: 100%;
+    min-height: 100vh;
+
+    position: relative;
+
+    background: black;
+
+    font-family: Inter, Arial, sans-serif;
+    font-style: normal;
+
+    transition: 0.3s;
+}
+
+@media (max-width: 956px) {
+    .page {
+        min-width: 581px;
+        max-width: calc(100% - 19px * 4);
+    }
+}
+
+@media (max-width: 619px) {
+    .page {
+        margin: 0;
+
+        min-width: 282px;
+        max-width: calc(100% - 0px * 2);
+    }
+}
+
+
+.page_theme-light {
+    background: #ffffff;
+
+    color: black;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 1;
+
+    top:0;
+    left:0;
+}
