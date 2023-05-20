@@ -1,4 +1,9 @@
 .popup_opened {
     opacity: 1;
+
+    scale: 1;
+
+    background: rgba(0, 0, 0, 0.5);
+
     visibility: visible;
 }

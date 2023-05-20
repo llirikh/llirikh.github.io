@@ -1,0 +1,36 @@
+.popup__prev-button {
+    margin: 0;
+    padding: 0;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 44%;
+    right: 102%;
+
+    cursor: pointer;
+
+    background: transparent url(../../../images/close-button.svg) no-repeat center;
+    outline: none;
+    border: none;
+}
+
+.popup__prev-button:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 619px) {
+    .popup__prev-button {
+        width: 20px;
+        height: 20px;
+
+        right: 91%;
+
+        background-size: 20px;
+    }
+}
+
+.popup__prev-button_disabled {
+    visibility: hidden;
+}

@@ -1,7 +1,7 @@
 //////////////////////////////////////////
 // Theme Control
 let currentTheme = "dark"
-let themeButton = document.querySelector(".header__theme-button");
+const themeButton = document.querySelector(".header__theme-button");
 
 function changeTheme() {
     themeButton.addEventListener("click", function () {
@@ -129,13 +129,9 @@ class Rain {
             trail.move();
             trail.traverse((c, i, last) => {
                 if (currentTheme === "dark") {
-                    c.element.style = `
-          color: hsl(136, 100%, ${85 / len * (i + 1)}%)
-        `;
+                    c.element.style = `color: hsl(136, 100%, ${85 / len * (i + 1)}%)`;
                 } else {
-                    c.element.style = `
-          color: hsl(136, 100%, ${100 - (85 / len * (i + 1))}%)
-        `;
+                    c.element.style = `color: hsl(136, 100%, ${100 - (85 / len * (i + 1))}%)`;
                 }
                 if (last) {
                     c.mutate();
@@ -153,7 +149,7 @@ class Rain {
 
 // Event Listeners
 let isRainOn = false
-let rainButton = document.querySelector(".header__rain-button");
+const rainButton = document.querySelector(".header__rain-button");
 
 const canvasBackground = document.querySelector('.canvas-background');
 
@@ -189,3 +185,86 @@ function switchRainResize() {
 
 rainButton.addEventListener("click", switchRainClick);
 window.addEventListener("resize", switchRainResize);
+
+
+//////////////////////////////////////////
+// Contact Control
+const contactButton = document.querySelector(".footer__copyright");
+
+const popupContact = document.querySelector(".popup_contact");
+const popupContactContainer = popupContact.querySelector(".popup__container")
+
+contactButton.addEventListener("click", function () {
+    popupContact.classList.toggle("popup_opened");
+    popupContactContainer.classList.toggle("popup__container_opened")
+})
+
+const popupContactCloseButton = popupContact.querySelector(".popup__close-button");
+
+popupContactCloseButton.addEventListener("click", function () {
+    popupContact.classList.toggle("popup_opened");
+    popupContactContainer.classList.toggle("popup__container_opened")
+})
+
+
+//////////////////////////////////////////
+// Gallery Control
+const popupGallery = document.querySelector(".popup_gallery");
+const popupGalleryContainer = popupGallery.querySelector(".popup__container");
+
+let currentImageNumber = 0;
+const imageArray = ["./images/1.jpg", "./images/2.jpg", "./images/3.jpg"];
+const popupImage = document.querySelector(".popup__image");
+
+const galleryButton = document.querySelector(".profile__avatar");
+const GalleryCloseButton = popupGallery.querySelector(".popup__close-button");
+const GalleryNextButton = document.querySelector(".popup__next-button");
+const GalleryPrevButton = document.querySelector(".popup__prev-button");
+
+function changeImage() {
+    popupImage.src = imageArray[currentImageNumber];
+    GalleryNextButton.classList.remove("popup__next-button_disabled");
+    GalleryPrevButton.classList.remove("popup__prev-button_disabled");
+    if (currentImageNumber === 0) {
+        GalleryPrevButton.classList.add("popup__prev-button_disabled");
+    }
+    if (currentImageNumber === imageArray.length - 1) {
+        GalleryNextButton.classList.add("popup__next-button_disabled");
+    }
+}
+galleryButton.addEventListener("click", function () {
+    currentImageNumber = 0;
+    changeImage();
+    popupGallery.classList.toggle("popup_opened");
+    popupGalleryContainer.classList.toggle("popup__container_opened")
+})
+
+popupGalleryContainer.addEventListener("click", function(evt) {
+    evt.stopPropagation();
+})
+
+GalleryCloseButton.addEventListener("click", function (evt) {
+    popupGallery.classList.remove("popup_opened");
+    popupGalleryContainer.classList.remove("popup__container_opened");
+    evt.stopPropagation();
+})
+
+GalleryNextButton.addEventListener("click", function (evt) {
+    currentImageNumber = (currentImageNumber + 1) % imageArray.length;
+    changeImage();
+    evt.stopPropagation();
+})
+
+GalleryPrevButton.addEventListener("click", function (evt) {
+    currentImageNumber -= 1;
+    if (currentImageNumber < 0) {
+        currentImageNumber = imageArray.length - 1;
+    }
+    changeImage();
+    evt.stopPropagation();
+})
+
+popupGallery.addEventListener("click", function () {
+    popupGallery.classList.remove("popup_opened");
+    popupGalleryContainer.classList.remove("popup__container_opened");
+})

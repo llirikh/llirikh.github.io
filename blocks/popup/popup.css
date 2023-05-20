@@ -6,15 +6,26 @@
     top: 0;
     left: 0;
 
+    z-index: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0);
 
     /* Эти параметры нужны, чтобы скрыть popup, т.к. еще не написаны js-компоненты */
     visibility: hidden;
     opacity: 0;
+
+    transition: 0.3s;
+}
+
+
+.popup__image {
+    width: 100%;
+
+    border-radius: 10px;
 }
 
 

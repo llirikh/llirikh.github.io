@@ -6,7 +6,7 @@
 
     <title>Portfolio</title>
 
-    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
     <header class="header">
@@ -18,7 +18,7 @@
 
     <main class="main">
         <section class="profile">
-                <img class="profile__avatar" src="images/avatar.webp" alt="Аватар">
+                <img class="profile__avatar" src="images/avatar.png" alt="Аватар">
 
                 <div class="profile__info">
                     <h1 class="profile__name">Kirill Zhukov</h1>
@@ -66,7 +66,7 @@
     </main>
 
     <footer class="footer">
-        <p class="footer__copyright">Contact</p>
+        <a class="footer__copyright">Contact</a>
         <div class="footer__button-container">
             <button class="footer__button"></button>
             <button class="footer__button"></button>
@@ -76,17 +76,17 @@
 
     <div class="canvas-background"></div>
 
-    <div class="popup popup_opened">
+    <div class="popup popup_contact">
         <div class="popup__container">
             <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
 
-            <h2 class="popup__title">Редактировать профиль</h2>
+            <h2 class="popup__title">Форма обратной связи</h2>
 
             <form class="popup__form" name="profile-edit">
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input" type="text" name="profile-name" placeholder="Имя">
+                    <input class="popup__input" type="email" name="profile-name" placeholder="E-mail">
 
-                    <input class="popup__input" type="text" name="profile-status" placeholder="О себе">
+                    <input class="popup__input" type="text" name="profile-status" placeholder="Текст сообщения">
                 </fieldset>
 
                 <button class="popup__save-button" type="submit">Сохранить</button>
@@ -94,6 +94,16 @@
         </div>
     </div>
 
-    <script src="./components/script.js"></script>
+    <div class="popup popup_gallery">
+        <div class="popup__container popup__container_gallery">
+            <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+            <button class="popup__next-button" type="button" aria-label="Следующее фото"></button>
+            <img class="popup__image" src="images/1.jpg">
+            <button class="popup__prev-button" type="button" aria-label="Предыдущее фото"></button>
+        </div>
+    </div>
+
+
+    <script src="components/script.js"></script>
 </body>
 </html>

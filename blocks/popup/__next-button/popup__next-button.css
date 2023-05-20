@@ -1,0 +1,36 @@
+.popup__next-button {
+    margin: 0;
+    padding: 0;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 44%;
+    right: -40px;
+
+    cursor: pointer;
+
+    background: transparent url(../../../images/close-button.svg) no-repeat center;
+    outline: none;
+    border: none;
+}
+
+.popup__next-button:hover {
+    opacity: 0.6;
+}
+
+@media (max-width: 619px) {
+    .popup__next-button {
+        width: 20px;
+        height: 20px;
+
+        right: 5px;
+
+        background-size: 20px;
+    }
+}
+
+.popup__next-button_disabled {
+    visibility: hidden;
+}

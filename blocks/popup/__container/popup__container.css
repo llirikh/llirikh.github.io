@@ -5,10 +5,26 @@
 
     position: relative;
 
+    z-index: 1;
+
     box-sizing: border-box;
 
     background: white;
     border-radius: 10px;
+
+    scale: 0.2;
+
+    transition: 0.3s;
+}
+
+.popup__container_gallery {
+    padding: 0;
+
+    background: transparent;
+}
+
+.popup__container_opened {
+    scale: 1;
 }
 
 @media (max-width: 619px) {
@@ -16,5 +32,9 @@
         padding: 25px 22px;
 
         width: 282px;
+    }
+
+    .popup__container_gallery {
+        padding: 0;
     }
 }

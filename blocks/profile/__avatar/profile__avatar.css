@@ -7,6 +7,16 @@
     border-radius: 50%;
 
     cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.profile__avatar:hover {
+    scale: 1.05;
+}
+
+.profile__avatar:active {
+    scale: 0.8;
 }
 
 @media (max-width: 619px) {

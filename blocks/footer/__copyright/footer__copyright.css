@@ -7,6 +7,14 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.footer__copyright:hover {
+    scale: 1.05;
 }
 
 @media (max-width: 619px) {
