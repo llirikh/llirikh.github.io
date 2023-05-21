@@ -360,3 +360,41 @@ formElement.addEventListener('submit', function (event) {
         message: text.value
     });
 });
+
+//////////////////////////////////////////
+// Form Control
+const popupReminderElement = document.querySelector(".popup_reminder");
+const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
+const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
+
+const popupReminderOpen = function() {
+    popupReminderElement.classList.add("popup_opened");
+    popupReminderContainer.classList.add("popup__container_opened");
+}
+
+const popupReminderClose = function() {
+    popupReminderElement.classList.remove("popup_opened");
+    popupReminderContainer.classList.remove("popup__container_opened");
+}
+
+const popupReminderOpenFirst = function () {
+    if (!localStorage.getItem("is-reminder-opened")) {
+        setTimeout(popupReminderOpen, 5000);
+    }
+}
+popupReminderOpenFirst();
+
+popupReminderCloseButton.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    localStorage.setItem("is-reminder-opened", "true");
+    popupReminderClose();
+})
+
+popupReminderContainer.addEventListener("click", function(evt) {
+    evt.stopPropagation();
+});
+
+popupReminderElement.addEventListener("click", function(evt) {
+    popupReminderClose();
+})

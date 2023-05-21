@@ -11,6 +11,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+.profile__name:hover {
+    scale: 1.05;
 }
 
 @media (max-width: 619px) {

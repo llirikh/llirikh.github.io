@@ -9,6 +9,11 @@
     line-height: 29px;
 }
 
+.popup__title_reminder {
+    margin: auto;
+    text-align: center;
+}
+
 @media (max-width: 619px) {
     .popup__title {
         margin-bottom: 45px;
