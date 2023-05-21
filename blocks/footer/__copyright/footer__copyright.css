@@ -5,7 +5,7 @@
     color: #545454;
 
     font-weight: 400;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 22px;
 
     cursor: pointer;
@@ -19,7 +19,7 @@
 
 @media (max-width: 619px) {
     .footer__copyright {
-        font-size: 14px;
+        font-size: 18px;
         line-height: 17px;
     }
 }
