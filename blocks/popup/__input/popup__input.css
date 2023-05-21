@@ -11,8 +11,19 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+
+    transition: 0.3s;
 }
 
 .popup__input:focus {
     border-bottom: 1px solid black;
+}
+
+.popup__input_error {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.popup__input_error:focus {
+    border-bottom: 1px solid red;
 }

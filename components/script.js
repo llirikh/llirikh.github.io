@@ -194,14 +194,24 @@ const contactButton = document.querySelector(".footer__copyright");
 const popupContact = document.querySelector(".popup_contact");
 const popupContactContainer = popupContact.querySelector(".popup__container")
 
+const popupContactCloseButton = popupContact.querySelector(".popup__close-button");
+
+popupContactContainer.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+})
+
 contactButton.addEventListener("click", function () {
     popupContact.classList.toggle("popup_opened");
     popupContactContainer.classList.toggle("popup__container_opened")
 })
 
-const popupContactCloseButton = popupContact.querySelector(".popup__close-button");
+popupContactCloseButton.addEventListener("click", function (evt) {
+    popupContact.classList.toggle("popup_opened");
+    popupContactContainer.classList.toggle("popup__container_opened")
+    evt.stopPropagation();
+})
 
-popupContactCloseButton.addEventListener("click", function () {
+popupContact.addEventListener("click", function() {
     popupContact.classList.toggle("popup_opened");
     popupContactContainer.classList.toggle("popup__container_opened")
 })
@@ -268,3 +278,42 @@ popupGallery.addEventListener("click", function () {
     popupGallery.classList.remove("popup_opened");
     popupGalleryContainer.classList.remove("popup__container_opened");
 })
+
+//////////////////////////////////////////
+// Gallery Control
+const formElement = document.querySelector(".popup__form");
+const formInputEmail = formElement.querySelector(".popup__input_email");
+const formInputText = formElement.querySelector(".popup__input_text");
+
+const formSaveButton = formElement.querySelector(".popup__save-button");
+
+const showInputError = (element) => {
+    element.classList.add("popup__input_error");
+}
+const hideInputError = (element) => {
+    element.classList.remove("popup__input_error");
+}
+const isValid = (element) => {
+    if (!element.validity.valid) {
+        showInputError(element);
+    } else {
+        hideInputError(element);
+    }
+}
+
+function switchButton() {
+    if (formInputEmail.validity.valid && formInputText.validity.valid) {
+        formSaveButton.classList.remove("popup__save-button_disabled");
+    } else {
+        formSaveButton.classList.add("popup__save-button_disabled");
+    }
+}
+
+formInputEmail.addEventListener("input", () => {
+    isValid(formInputEmail);
+    switchButton();
+});
+formInputText.addEventListener("input", () => {
+    isValid(formInputText);
+    switchButton();
+});

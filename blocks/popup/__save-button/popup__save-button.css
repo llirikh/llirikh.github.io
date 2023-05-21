@@ -20,10 +20,14 @@
     line-height: 22px;
 
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
-.popup__save-button:hover {
-    opacity: 0.8;
+.popup__save-button_disabled {
+    opacity: 0.4;
+    cursor: none;
+    pointer-events: none;
 }
 
 

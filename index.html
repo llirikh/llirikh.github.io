@@ -84,12 +84,12 @@
 
             <form class="popup__form" name="profile-edit">
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input" type="email" name="profile-name" placeholder="E-mail">
+                    <input class="popup__input popup__input_email" type="email" name="e-mail" placeholder="E-mail" required pattern="^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$">
 
-                    <input class="popup__input" type="text" name="profile-status" placeholder="Текст сообщения">
+                    <input class="popup__input popup__input_text" type="text" name="text" placeholder="Message" required>
                 </fieldset>
 
-                <button class="popup__save-button" type="submit">Сохранить</button>
+                <button class="popup__save-button popup__save-button_disabled" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
