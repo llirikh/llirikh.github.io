@@ -342,6 +342,9 @@ function createPost(newPost) {
         setTimeout(function(){
             popupContact.classList.toggle("popup_opened");
             popupContactContainer.classList.toggle("popup__container_opened");
+            formElement.reset();
+            switchSaveButtonText("Submit");
+            switchButton();
         }, 500);
     })
 }
