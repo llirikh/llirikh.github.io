@@ -23,7 +23,7 @@ changeTheme();
 
 
 //////////////////////////////////////////
-// Background Control
+// Canvas Background Control
 function r(from, to) {
     return ~~(Math.random() * (to - from + 1) + from);
 }
@@ -136,11 +136,10 @@ class Rain {
                 if (last) {
                     c.mutate();
                     c.element.style = `
-            color: hsl(136, 100%, 85%);
-            text-shadow:
-              0 0 .5em #fff,
-              0 0 .5em currentColor;
-          `;
+                        color: hsl(136, 100%, 85%);
+                        text-shadow:
+                          0 0 .5em #fff,
+                          0 0 .5em currentColor;`;
                 }
             });
         }, delay);
@@ -280,7 +279,7 @@ popupGallery.addEventListener("click", function () {
 })
 
 //////////////////////////////////////////
-// Gallery Control
+// Form Control
 const formElement = document.querySelector(".popup__form");
 const formInputEmail = formElement.querySelector(".popup__input_email");
 const formInputText = formElement.querySelector(".popup__input_text");

@@ -6,10 +6,11 @@
     line-height: 17px;
 
     color: red;
-
+    opacity: 1;
     transition: 0.3s;
 }
 
 .popup__error-message_disabled {
+    opacity: 0;
     visibility: hidden;
 }
