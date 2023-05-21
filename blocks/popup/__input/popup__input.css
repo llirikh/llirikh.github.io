@@ -1,5 +1,5 @@
 ﻿.popup__input {
-    margin: 13px 0 30px;
+    margin: 13px 0 0;
     padding: 0 0 8px;
 
     width: 100%;
@@ -20,7 +20,6 @@
 }
 
 .popup__input_error {
-    color: red;
     border-bottom: 1px solid red;
 }
 

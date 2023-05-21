@@ -1,0 +1,15 @@
+.popup__error-message {
+    margin: 0 0 15px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: red;
+
+    transition: 0.3s;
+}
+
+.popup__error-message_disabled {
+    visibility: hidden;
+}

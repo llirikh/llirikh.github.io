@@ -287,17 +287,22 @@ const formInputText = formElement.querySelector(".popup__input_text");
 
 const formSaveButton = formElement.querySelector(".popup__save-button");
 
-const showInputError = (element) => {
-    element.classList.add("popup__input_error");
+const formErrorEmail = formElement.querySelector(".popup__error-message_email");
+const formErrorText = formElement.querySelector(".popup__error-message_text");
+
+const showInputError = (elementInput, elementError) => {
+    elementInput.classList.add("popup__input_error");
+    elementError.classList.remove("popup__error-message_disabled");
 }
-const hideInputError = (element) => {
-    element.classList.remove("popup__input_error");
+const hideInputError = (elementInput, elementError) => {
+    elementInput.classList.remove("popup__input_error");
+    elementError.classList.add("popup__error-message_disabled");
 }
-const isValid = (element) => {
-    if (!element.validity.valid) {
-        showInputError(element);
+const isValid = (elementInput, elementError) => {
+    if (!elementInput.validity.valid) {
+        showInputError(elementInput, elementError);
     } else {
-        hideInputError(element);
+        hideInputError(elementInput, elementError);
     }
 }
 
@@ -310,10 +315,10 @@ function switchButton() {
 }
 
 formInputEmail.addEventListener("input", () => {
-    isValid(formInputEmail);
+    isValid(formInputEmail, formErrorEmail);
     switchButton();
 });
 formInputText.addEventListener("input", () => {
-    isValid(formInputText);
+    isValid(formInputText, formErrorText);
     switchButton();
 });

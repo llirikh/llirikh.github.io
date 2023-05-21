@@ -39,4 +39,5 @@
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__fieldset/popup__fieldset.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__error-message/popup__error-message.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
