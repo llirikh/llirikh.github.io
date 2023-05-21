@@ -321,3 +321,34 @@ formInputText.addEventListener("input", () => {
     isValid(formInputText, formErrorText);
     switchButton();
 });
+
+//////////////////////////////////////////
+// Form Control
+function switchSaveButtonText(text) {
+    formSaveButton.textContent = text;
+}
+function createPost(newPost) {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+            email: newPost.email,
+            message: newPost.text
+        })
+    }).then(res=>res.json()).then((post)=>{switchSaveButtonText("Submitted")})
+}
+
+// обработчик сабмита формы
+formElement.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    switchSaveButtonText("Submitting")
+
+    const {email, text} = event.currentTarget.elements;
+    createPost({
+        email: email.value,
+        message: text.value
+    });
+});
