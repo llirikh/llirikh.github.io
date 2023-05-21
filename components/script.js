@@ -337,14 +337,19 @@ function createPost(newPost) {
             email: newPost.email,
             message: newPost.text
         })
-    }).then(res=>res.json()).then((post)=>{switchSaveButtonText("Submitted")})
+    }).then(res=>res.json()).then((post)=>{
+        switchSaveButtonText("Submitted");
+        setTimeout(function(){
+            popupContact.classList.toggle("popup_opened");
+            popupContactContainer.classList.toggle("popup__container_opened");
+        }, 500);
+    })
 }
-
 // обработчик сабмита формы
 formElement.addEventListener('submit', function (event) {
-    event.preventDefault();
+    switchSaveButtonText("Submitting...")
 
-    switchSaveButtonText("Submitting")
+    event.preventDefault();
 
     const {email, text} = event.currentTarget.elements;
     createPost({
