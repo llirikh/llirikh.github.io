@@ -379,7 +379,7 @@ const popupReminderClose = function() {
 
 const popupReminderOpenFirst = function () {
     if (!localStorage.getItem("is-reminder-opened")) {
-        setTimeout(popupReminderOpen, 5000);
+        setTimeout(popupReminderOpen, 30000);
     }
 }
 popupReminderOpenFirst();
