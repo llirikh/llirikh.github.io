@@ -11,7 +11,7 @@
 
     cursor: pointer;
 
-    background: transparent url(../../../images/close-button.svg) no-repeat center;
+    background: rgba(0, 0, 0, 0) url(../../../images/close-button.svg) no-repeat center;
     outline: none;
     border: none;
 }

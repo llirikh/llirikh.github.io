@@ -2,6 +2,7 @@
 // Theme Control
 let currentTheme = "dark"
 const themeButton = document.querySelector(".header__theme-button");
+const rainButton = document.querySelector(".header__rain-button");
 
 function changeTheme() {
     themeButton.addEventListener("click", function () {
@@ -10,6 +11,9 @@ function changeTheme() {
 
         page_el.classList.toggle("page_theme-light");
         main_el.classList.toggle("main_theme-light");
+
+        themeButton.classList.toggle("header__theme-button_light");
+        rainButton.classList.toggle("header__rain-button_light");
 
         if (currentTheme === "dark") {
             currentTheme = "light";
@@ -148,7 +152,6 @@ class Rain {
 
 // Event Listeners
 let isRainOn = false
-const rainButton = document.querySelector(".header__rain-button");
 
 const canvasBackground = document.querySelector('.canvas-background');
 

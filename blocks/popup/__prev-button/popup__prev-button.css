@@ -11,7 +11,10 @@
 
     cursor: pointer;
 
-    background: transparent url(../../../images/close-button.svg) no-repeat center;
+    background: transparent url(../../../images/left-button.png) no-repeat center;
+    background-size: contain;
+    scale: 1.75;
+
     outline: none;
     border: none;
 }

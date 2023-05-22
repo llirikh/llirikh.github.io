@@ -18,3 +18,58 @@
         padding: 0 27px 0;
     }
 }
+
+.header__rain-button {
+    margin: 5px 5px 20px;
+    padding: 0;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+
+    background: url(./../../images/rain-button_dark.png) transparent no-repeat center;
+    background-size: contain;
+    outline: none;
+    border: none;
+
+    transition: 0.3s;
+}
+
+.header__rain-button:hover {
+    opacity: 0.6;
+}
+
+.header__rain-button_light {
+    background: url(./../../images/rain-button_light.png) transparent no-repeat center;
+    background-size: contain;
+}
+
+
+.header__theme-button {
+    margin: 5px 5px 20px;
+    padding: 0;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+
+    scale: 1.18;
+
+    background: url(./../../images/theme-button_dark.png) transparent no-repeat center;
+    background-size: contain;
+    outline: none;
+    border: none;
+
+    transition: 0.3s;
+}
+
+.header__theme-button:hover {
+    opacity: 0.6;
+}
+
+.header__theme-button_light {
+    background: url(./../../images/theme-button_light.png) transparent no-repeat center;
+    background-size: contain;
+}
