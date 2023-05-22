@@ -220,63 +220,100 @@ popupContact.addEventListener("click", function() {
 // Gallery Control
 const popupGallery = document.querySelector(".popup_gallery");
 const popupGalleryContainer = popupGallery.querySelector(".popup__container");
+const popupGalleryImage = popupGalleryContainer.querySelector(".popup__image");
 
-let currentImageNumber = 0;
-const imageArray = ["./images/1.jpg", "./images/2.jpg", "./images/3.jpg"];
-const popupImage = document.querySelector(".popup__image");
+const popupGalleryCloseButton = popupGallery.querySelector(".popup__close-button");
+const popupGalleryNextButton = popupGallery.querySelector(".popup__next-button");
+const popupGalleryPrevButton = popupGallery.querySelector(".popup__prev-button");
 
-const galleryButton = document.querySelector(".profile__avatar");
-const GalleryCloseButton = popupGallery.querySelector(".popup__close-button");
-const GalleryNextButton = document.querySelector(".popup__next-button");
-const GalleryPrevButton = document.querySelector(".popup__prev-button");
+const imageContainerArray = document.querySelectorAll(".cards__card");
 
-function changeImage() {
-    popupImage.src = imageArray[currentImageNumber];
-    GalleryNextButton.classList.remove("popup__next-button_disabled");
-    GalleryPrevButton.classList.remove("popup__prev-button_disabled");
-    if (currentImageNumber === 0) {
-        GalleryPrevButton.classList.add("popup__prev-button_disabled");
+let currentImageContainer = document.querySelector(".cards__card");
+let currentImageLink = currentImageContainer.querySelector(".cards__image").src;
+
+function openPopupGallery() {
+    popupGallery.classList.add("popup_opened");
+    popupGalleryContainer.classList.add("popup__container_opened");
+}
+
+function closePopupGallery() {
+    popupGallery.classList.remove("popup_opened");
+    popupGalleryContainer.classList.remove("popup__container_opened");
+}
+
+function switchNext() {
+    let temp = currentImageContainer.nextElementSibling;
+    if (temp == null) {
+        return;
     }
-    if (currentImageNumber === imageArray.length - 1) {
-        GalleryNextButton.classList.add("popup__next-button_disabled");
+    currentImageContainer = temp;
+    currentImageLink = currentImageContainer.querySelector(".cards__image").src;
+}
+
+function switchPrev() {
+    let temp = currentImageContainer.previousElementSibling;
+    if (temp == null) {
+        return;
+    }
+    currentImageContainer = temp;
+    currentImageLink = currentImageContainer.querySelector(".cards__image").src;
+}
+
+function switchNavigationButtons() {
+    let temp = currentImageContainer.previousElementSibling;
+    if (temp == null) {
+        popupGalleryPrevButton.classList.add("popup__prev-button_disabled");
+    } else {
+        popupGalleryPrevButton.classList.remove("popup__prev-button_disabled");
+    }
+    temp = currentImageContainer.nextElementSibling;
+    if (temp == null) {
+        popupGalleryNextButton.classList.add("popup__next-button_disabled");
+    } else {
+        popupGalleryNextButton.classList.remove("popup__next-button_disabled");
     }
 }
-galleryButton.addEventListener("click", function () {
-    currentImageNumber = 0;
-    changeImage();
-    popupGallery.classList.toggle("popup_opened");
-    popupGalleryContainer.classList.toggle("popup__container_opened")
+
+function setImage() {
+    popupGalleryImage.src = currentImageLink;
+}
+
+imageContainerArray.forEach(function (item) {
+    item.addEventListener("click", function () {
+        console.log(item);
+        currentImageContainer = item;
+        currentImageLink = item.querySelector(".cards__image").src;
+        setImage();
+        openPopupGallery();
+        switchNavigationButtons();
+    })
 })
 
-popupGalleryContainer.addEventListener("click", function(evt) {
+popupGalleryNextButton.addEventListener("click", function (evt) {
+    switchNext();
+    setImage();
+    switchNavigationButtons();
     evt.stopPropagation();
 })
 
-GalleryCloseButton.addEventListener("click", function (evt) {
-    popupGallery.classList.remove("popup_opened");
-    popupGalleryContainer.classList.remove("popup__container_opened");
+popupGalleryPrevButton.addEventListener("click", function (evt) {
+    switchPrev();
+    setImage();
+    switchNavigationButtons();
     evt.stopPropagation();
 })
 
-GalleryNextButton.addEventListener("click", function (evt) {
-    currentImageNumber = (currentImageNumber + 1) % imageArray.length;
-    changeImage();
+popupGalleryCloseButton.addEventListener("click", function (evt) {
+    closePopupGallery();
     evt.stopPropagation();
 })
 
-GalleryPrevButton.addEventListener("click", function (evt) {
-    currentImageNumber -= 1;
-    if (currentImageNumber < 0) {
-        currentImageNumber = imageArray.length - 1;
-    }
-    changeImage();
+popupGallery.addEventListener("click", function (evt) {
+    closePopupGallery();
     evt.stopPropagation();
 })
 
-popupGallery.addEventListener("click", function () {
-    popupGallery.classList.remove("popup_opened");
-    popupGalleryContainer.classList.remove("popup__container_opened");
-})
+
 
 //////////////////////////////////////////
 // Form Control
@@ -337,7 +374,7 @@ function createPost(newPost) {
             email: newPost.email,
             message: newPost.text
         })
-    }).then(res=>res.json()).then((post)=>{
+    }).then(res=>res.json()).then(()=>{
         switchSaveButtonText("Submitted");
         setTimeout(function(){
             popupContact.classList.toggle("popup_opened");
@@ -397,4 +434,5 @@ popupReminderContainer.addEventListener("click", function(evt) {
 
 popupReminderElement.addEventListener("click", function(evt) {
     popupReminderClose();
+    evt.stopPropagation();
 })

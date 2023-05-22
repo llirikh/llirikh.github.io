@@ -1,0 +1,40 @@
+﻿.cards__card {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    background: white;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.cards__card:hover {
+    scale: 1.03;
+}
+
+.cards__card:active {
+    scale: 0.9;
+}
+
+@media (max-width: 619px) {
+    .cards__card {
+        max-width: 423px;
+
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 554px) {
+    .cards__card {
+        scale: 0.7;
+    }
+}

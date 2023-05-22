@@ -24,6 +24,14 @@
 @import url(../blocks/information/__education-information/information__education-information.css);
 @import url(../blocks/information/__skills-name/information__skills-name.css);
 
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__list/cards__list.css);
+@import url(../blocks/cards/__card/cards__card.css);
+@import url(../blocks/cards/__image/cards__image.css);
+@import url(../blocks/cards/__info/cards__info.css);
+@import url(../blocks/cards/__name/cards__name.css);
+@import url(../blocks/cards/__like-button/cards__like-button.css);
+
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/footer/__button/footer__button.css);
