@@ -5,26 +5,29 @@ const themeButton = document.querySelector(".header__theme-button");
 const rainButton = document.querySelector(".header__rain-button");
 
 function changeTheme() {
-    themeButton.addEventListener("click", function () {
-        let page_el = document.querySelector(".page");
-        let main_el = document.querySelector(".main");
+    let page_el = document.querySelector(".page");
+    let main_el = document.querySelector(".main");
 
-        page_el.classList.toggle("page_theme-light");
-        main_el.classList.toggle("main_theme-light");
+    page_el.classList.toggle("page_theme-light");
+    main_el.classList.toggle("main_theme-light");
 
-        themeButton.classList.toggle("header__theme-button_light");
-        rainButton.classList.toggle("header__rain-button_light");
+    themeButton.classList.toggle("header__theme-button_light");
+    rainButton.classList.toggle("header__rain-button_light");
 
-        if (currentTheme === "dark") {
-            currentTheme = "light";
-        } else {
-            currentTheme = "dark";
-        }
-    })
+    if (currentTheme === "dark") {
+        currentTheme = "light";
+        localStorage.setItem("theme", "light");
+    } else {
+        currentTheme = "dark";
+        localStorage.setItem("theme", "dark")
+    }
 }
 
-changeTheme();
+themeButton.addEventListener("click", changeTheme);
 
+if (localStorage.getItem("theme") === "light") {
+    changeTheme();
+}
 
 //////////////////////////////////////////
 // Canvas Background Control
@@ -177,10 +180,18 @@ function switchRainResize() {
             while (canvasBackground.firstChild) {
                 canvasBackground.removeChild(canvasBackground.firstChild);
             }
+            rainButton.classList.add("header__rain-button_disabled");
         } else {
             for (let i = 0; i < 50; ++i) {
                 new Rain({target: canvasBackground, row: 50});
             }
+            rainButton.classList.remove("header__rain-button_disabled");
+        }
+    } else {
+        if (window.innerWidth < 800) {
+            rainButton.classList.add("header__rain-button_disabled");
+        } else {
+            rainButton.classList.remove("header__rain-button_disabled");
         }
     }
 }
@@ -402,7 +413,7 @@ formElement.addEventListener('submit', function (event) {
 });
 
 //////////////////////////////////////////
-// Form Control
+// Reminder Control
 const popupReminderElement = document.querySelector(".popup_reminder");
 const popupReminderContainer = popupReminderElement.querySelector(".popup__container_reminder");
 const popupReminderCloseButton = popupReminderElement.querySelector(".popup__close-button");
@@ -419,7 +430,7 @@ const popupReminderClose = function() {
 
 const popupReminderOpenFirst = function () {
     if (!localStorage.getItem("is-reminder-opened")) {
-        setTimeout(popupReminderOpen, 30000);
+        setTimeout(popupReminderOpen, 5000);
     }
 }
 popupReminderOpenFirst();
@@ -436,6 +447,7 @@ popupReminderContainer.addEventListener("click", function(evt) {
 });
 
 popupReminderElement.addEventListener("click", function(evt) {
+    localStorage.setItem("is-reminder-opened", "true");
     popupReminderClose();
     evt.stopPropagation();
 })
