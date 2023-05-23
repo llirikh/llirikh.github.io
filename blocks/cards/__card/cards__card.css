@@ -31,18 +31,18 @@
 
         margin: 0 auto;
     }
-
-    .cards__card:hover {
-        scale: 1;
-    }
-
-    .cards__card:active {
-        scale: 1;
-    }
 }
 
 @media (max-width: 554px) {
     .cards__card {
         scale: 0.7;
+    }
+
+    .cards__card:hover {
+        scale: 0.75;
+    }
+
+    .cards__card:active {
+        scale: 0.65;
     }
 }

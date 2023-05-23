@@ -81,7 +81,7 @@ class Trail {
 
     traverse(fn) {
         this.body.forEach((n, i) => {
-            let last = (i == this.body.length - 1);
+            let last = (i === this.body.length - 1);
             if (n) fn(n, i, last);
         });
     }
